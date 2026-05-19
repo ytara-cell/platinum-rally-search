@@ -1,0 +1,9 @@
+.portal_session.json
+__pycache__/
+*.pyc
+.DS_Store
+screenshots/
+thumbs/
+cases.json
+active_rallies.json
+portal_active_rallies.json
