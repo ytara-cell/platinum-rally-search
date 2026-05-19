@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プラチナラリー 開催中一覧</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Meiryo", sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+  }
+
+  header {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 24px 20px 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  header p {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+
+  .meta {
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.8rem;
+    color: #888;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+  }
+
+  .meta strong {
+    color: #1a1a2e;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+  }
+
+  .loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+    font-size: 0.95rem;
+  }
+
+  .error {
+    text-align: center;
+    padding: 40px 20px;
+    color: #c0392b;
+    font-size: 0.9rem;
+  }
+
+  .count {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 16px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-left: 4px solid #4a90d9;
+    transition: box-shadow 0.15s;
+  }
+
+  .card:hover {
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: #1a1a2e;
+  }
+
+  .card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    background: #f0f4f8;
+    border-radius: 4px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  .tag.date {
+    background: #e8f4fd;
+    color: #2980b9;
+  }
+
+  .tag.org {
+    background: #eafaf1;
+    color: #27ae60;
+  }
+
+  .tag.stamp {
+    background: #fef9e7;
+    color: #d68910;
+  }
+
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .btn:hover { opacity: 0.8; }
+
+  .btn-primary {
+    background: #4a90d9;
+    color: #fff;
+  }
+
+  .btn-secondary {
+    background: #f0f4f8;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.75rem;
+    color: #aaa;
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 14px 16px; }
+    header h1 { font-size: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🏅 プラチナラリー 開催中一覧</h1>
+  <p>現在開催中のデジタルスタンプラリー</p>
+</header>
+
+<div class="meta" id="meta">読み込み中...</div>
+
+<div class="container">
+  <div class="loading" id="loading">データを取得中...</div>
+  <div class="error" id="error" style="display:none"></div>
+  <div id="count" class="count" style="display:none"></div>
+  <div id="list"></div>
+</div>
+
+<footer>
+  データソース: <a href="https://platinumaps.jp/d/platinarally" target="_blank">platinumaps.jp</a>
+</footer>
+
+<script>
+async function load() {
+  const metaEl   = document.getElementById('meta');
+  const loadEl   = document.getElementById('loading');
+  const errorEl  = document.getElementById('error');
+  const countEl  = document.getElementById('count');
+  const listEl   = document.getElementById('list');
+
+  try {
+    const res = await fetch('./data.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    loadEl.style.display = 'none';
+
+    const today = data.today || '';
+    const fetched = data.fetchedAt ? data.fetchedAt.replace('T', ' ').slice(0, 16) : '';
+    metaEl.innerHTML = `基準日: <strong>${today}</strong> ／ 更新: ${fetched}`;
+
+    const rallies = data.rallies || [];
+    countEl.textContent = `${rallies.length} 件開催中`;
+    countEl.style.display = '';
+
+    if (rallies.length === 0) {
+      listEl.innerHTML = '<p style="text-align:center;color:#888;padding:40px">現在開催中のラリーはありません</p>';
+      return;
+    }
+
+    listEl.innerHTML = rallies.map(r => renderCard(r)).join('');
+  } catch (e) {
+    loadEl.style.display = 'none';
+    errorEl.style.display = '';
+    errorEl.textContent = 'データの読み込みに失敗しました: ' + e.message;
+    metaEl.textContent = '';
+  }
+}
+
+function renderCard(r) {
+  const period = r.dateText || `${r.startDate} 〜 ${r.endDate}`;
+
+  let tags = `<span class="tag date">📅 ${period}</span>`;
+  if (r.organizer) tags += `<span class="tag org">🏢 ${r.organizer}</span>`;
+  if (r.stampMethod) tags += `<span class="tag stamp">🔖 ${r.stampMethod}</span>`;
+  if (r.rewardMethod) tags += `<span class="tag">🎁 ${r.rewardMethod}</span>`;
+
+  let links = '';
+  if (r.mapLink) links += `<a class="btn btn-primary" href="${esc(r.mapLink)}" target="_blank">マップで見る</a>`;
+  if (r.url) links += `<a class="btn btn-secondary" href="${esc(r.url)}" target="_blank">主催者サイト</a>`;
+  if (r.caseUrl) links += `<a class="btn btn-secondary" href="${esc(r.caseUrl)}" target="_blank">事例紹介</a>`;
+
+  return `
+  <div class="card">
+    <div class="card-title">${esc(r.title)}</div>
+    <div class="card-meta">${tags}</div>
+    ${links ? `<div class="card-links">${links}</div>` : ''}
+  </div>`;
+}
+
+function esc(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+load();
+</script>
+</body>
+</html>
