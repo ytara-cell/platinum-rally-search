@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-05-27T12:38:32.529332",
-  "today": "2026-05-27",
-  "total": 16,
+  "fetchedAt": "2026-05-28T12:49:54.744609",
+  "today": "2026-05-28",
+  "total": 21,
   "rallies": [
     {
       "id": 511689,
@@ -214,6 +214,20 @@
       "address": "鳥取県倉吉市駄経寺町１９８－４"
     },
     {
+      "id": 644648,
+      "title": "新緑の夏国廻（さまらんスタンプラリー）",
+      "organizer": "株式会社東京サマーランド",
+      "startDate": "2026-05-01",
+      "endDate": "2026-05-31",
+      "dateText": "2026年5月1日 - 2026年5月31日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "ルーレット",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=644648",
+      "address": "東京都あきる野市上代継600"
+    },
+    {
       "id": 640666,
       "title": "越前町よりどり海土里（みどり）デジタルスタンプラリー 2026【第1弾】",
       "organizer": "越前町観光連盟",
@@ -226,6 +240,62 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=640666",
       "address": "福井県丹生郡越前町上川去４５−１−７"
+    },
+    {
+      "id": 644650,
+      "title": "ハマフェスY167ウォークスタンプラリー",
+      "organizer": "ハマフェス実行委員会",
+      "startDate": "2026-05-09",
+      "endDate": "2026-05-31",
+      "dateText": "2026年5月9日 - 2026年5月31日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "電子チケット",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=644650",
+      "address": "神奈川県横浜市中区新港１丁目１−２ 横浜赤レンガ倉庫2号館"
+    },
+    {
+      "id": 644651,
+      "title": "5th Anniversary Memory ー 思い出のかけらを集めて ー",
+      "organizer": "グランドニッコー東京ベイ 舞浜",
+      "startDate": "2026-05-14",
+      "endDate": "2026-06-30",
+      "dateText": "2026年5月14日 - 2026年6月30日",
+      "stampMethod": "QRコード方式、選択式クイズ方式",
+      "rewardMethod": "電子チケット、応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=644651",
+      "address": "千葉県浦安市舞浜1-7"
+    },
+    {
+      "id": 644653,
+      "title": "「KING OF PRISM」デジタルスタンプラリー　\"STORY1 ラグーナ きらめき☆バケーション\"",
+      "organizer": "株式会社ラグーナテンボス",
+      "startDate": "2026-05-16",
+      "endDate": "2026-06-15",
+      "dateText": "2026年5月16日 - 2026年6月15日",
+      "stampMethod": "GPS方式、選択式クイズ方式",
+      "rewardMethod": "",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=644653",
+      "address": "愛知県蒲郡市海陽町2丁目3-1"
+    },
+    {
+      "id": 644654,
+      "title": "SSTRデジタルスタンプラリー2026",
+      "organizer": "SSTR応援事業実行委員会",
+      "startDate": "2026-05-23",
+      "endDate": "2026-05-31",
+      "dateText": "2026年5月23日 - 2026年5月31日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "応募フォーム",
+      "url": "",
+      "caseUrl": "https://stamprally.digital/showcase/#id1718",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=644654",
+      "address": "羽咋市千里浜町"
     }
   ]
 }
