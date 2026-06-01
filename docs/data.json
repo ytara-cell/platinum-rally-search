@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-05-31T09:59:09.450639",
-  "today": "2026-05-31",
-  "total": 21,
+  "fetchedAt": "2026-06-01T19:30:09.959595",
+  "today": "2026-06-01",
+  "total": 16,
   "rallies": [
     {
       "id": 511689,
@@ -46,20 +46,6 @@
       "address": "江東区青海2-3-6"
     },
     {
-      "id": 622934,
-      "title": "ランチで食うポン2026",
-      "organizer": "福島商工会議所",
-      "startDate": "2026-03-01",
-      "endDate": "2026-05-31",
-      "dateText": "2026年3月1日 - 2026年5月31日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "応募フォーム",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=622934",
-      "address": "福島市三河南町1-20 コラッセふくしま8F"
-    },
-    {
       "id": 596551,
       "title": "パラノマサイト×伊勢志摩 デジタルスタンプラリー",
       "organizer": "伊勢志摩観光コンベンション機構",
@@ -72,20 +58,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=596551",
       "address": "三重県鳥羽市鳥羽3-3-6"
-    },
-    {
-      "id": 627754,
-      "title": "２りんかんスタンプラリー2026【Spring】",
-      "organizer": "株式会社２りんかんイエローハット",
-      "startDate": "2026-03-20",
-      "endDate": "2026-05-31",
-      "dateText": "2026年3月20日 - 2026年5月31日",
-      "stampMethod": "QRコード方式、GPS方式",
-      "rewardMethod": "電子チケット",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=627754",
-      "address": "三重県四日市市日永東3-6-20"
     },
     {
       "id": 627755,
@@ -214,20 +186,6 @@
       "address": "鳥取県倉吉市駄経寺町１９８－４"
     },
     {
-      "id": 644648,
-      "title": "新緑の夏国廻（さまらんスタンプラリー）",
-      "organizer": "株式会社東京サマーランド",
-      "startDate": "2026-05-01",
-      "endDate": "2026-05-31",
-      "dateText": "2026年5月1日 - 2026年5月31日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "ルーレット",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=644648",
-      "address": "東京都あきる野市上代継600"
-    },
-    {
       "id": 640666,
       "title": "越前町よりどり海土里（みどり）デジタルスタンプラリー 2026【第1弾】",
       "organizer": "越前町観光連盟",
@@ -240,20 +198,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=640666",
       "address": "福井県丹生郡越前町上川去４５−１−７"
-    },
-    {
-      "id": 644650,
-      "title": "ハマフェスY167ウォークスタンプラリー",
-      "organizer": "ハマフェス実行委員会",
-      "startDate": "2026-05-09",
-      "endDate": "2026-05-31",
-      "dateText": "2026年5月9日 - 2026年5月31日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "電子チケット",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=644650",
-      "address": "神奈川県横浜市中区新港１丁目１−２ 横浜赤レンガ倉庫2号館"
     },
     {
       "id": 644651,
@@ -282,20 +226,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=644653",
       "address": "愛知県蒲郡市海陽町2丁目3-1"
-    },
-    {
-      "id": 644654,
-      "title": "SSTRデジタルスタンプラリー2026",
-      "organizer": "SSTR応援事業実行委員会",
-      "startDate": "2026-05-23",
-      "endDate": "2026-05-31",
-      "dateText": "2026年5月23日 - 2026年5月31日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "応募フォーム",
-      "url": "",
-      "caseUrl": "https://stamprally.digital/showcase/#id1718",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=644654",
-      "address": "羽咋市千里浜町"
     }
   ]
 }
