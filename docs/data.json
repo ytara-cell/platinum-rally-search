@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-06-07T10:15:02.851848",
-  "today": "2026-06-07",
-  "total": 16,
+  "fetchedAt": "2026-06-08T14:51:16.210150",
+  "today": "2026-06-08",
+  "total": 14,
   "rallies": [
     {
       "id": 511689,
@@ -128,34 +128,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=627887",
       "address": "米子市淀江町佐陀1605-1"
-    },
-    {
-      "id": 627892,
-      "title": "【GATR2026】デジタルスタンプラリー",
-      "organizer": "GATR実行委員会",
-      "startDate": "2026-04-11",
-      "endDate": "2026-06-07",
-      "dateText": "2026年4月11日 - 2026年6月7日",
-      "stampMethod": "GPS方式",
-      "rewardMethod": "外部リンク",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=627892",
-      "address": "大分県竹田市久住町大字白丹"
-    },
-    {
-      "id": 627891,
-      "title": "【BSTR2026】デジタルスタンプラリー",
-      "organizer": "BSTR実行委員会",
-      "startDate": "2026-04-11",
-      "endDate": "2026-06-07",
-      "dateText": "2026年4月11日 - 2026年6月7日",
-      "stampMethod": "GPS方式",
-      "rewardMethod": "外部リンク",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=627891",
-      "address": "香川県さぬき市小田２６７１−７５ 大串自然公園"
     },
     {
       "id": 627898,
