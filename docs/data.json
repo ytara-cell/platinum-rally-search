@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-06-18T03:53:15.658314",
-  "today": "2026-06-18",
-  "total": 22,
+  "fetchedAt": "2026-06-19T04:13:40.768416",
+  "today": "2026-06-19",
+  "total": 23,
   "rallies": [
     {
       "id": 511689,
@@ -310,6 +310,20 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=648031",
       "address": "愛知県蒲郡市海陽町2丁目3-1"
+    },
+    {
+      "id": 648032,
+      "title": "東京みなと祭スタンプラリー2026",
+      "organizer": "東京みなと祭協議会",
+      "startDate": "2026-06-19",
+      "endDate": "2026-06-28",
+      "dateText": "2026年6月19日 - 2026年6月28日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "電子チケット",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=648032",
+      "address": "東京都江東区青海二丁目地先"
     }
   ]
 }
