@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-06-21T04:07:46.631317",
-  "today": "2026-06-21",
+  "fetchedAt": "2026-06-22T04:08:11.876339",
+  "today": "2026-06-22",
   "total": 23,
   "rallies": [
     {
@@ -200,20 +200,6 @@
       "address": "福島県いわき市常磐藤原町蕨平50"
     },
     {
-      "id": 648015,
-      "title": "かちコレ2026-TOKACHI COLLECTION-スタンプラリー",
-      "organizer": "十勝毎日新聞社",
-      "startDate": "2026-05-23",
-      "endDate": "2026-06-21",
-      "dateText": "2026年5月23日 - 2026年6月21日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "応募フォーム",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=648015",
-      "address": "芽室町西4条8丁目1-29"
-    },
-    {
       "id": 648018,
       "title": "東急レディスゴルフ2026スタンプラリー",
       "organizer": "東急レディスゴルフ2026大会事務局",
@@ -324,6 +310,20 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=648032",
       "address": "東京都江東区青海二丁目地先"
+    },
+    {
+      "id": 648034,
+      "title": "HEP-FIVEすとぷりスタンプラリー",
+      "organizer": "株式会社STPR",
+      "startDate": "2026-06-22",
+      "endDate": "2026-07-12",
+      "dateText": "2026年6月22日 - 2026年7月12日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "電子チケット",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=648034",
+      "address": "大阪府大阪市北区角田町5-15"
     }
   ]
 }
