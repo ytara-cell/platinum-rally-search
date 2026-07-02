@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-07-01T03:43:29.893916",
-  "today": "2026-07-01",
-  "total": 16,
+  "fetchedAt": "2026-07-02T03:29:39.754522",
+  "today": "2026-07-02",
+  "total": 15,
   "rallies": [
     {
       "id": 551697,
@@ -156,20 +156,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=648019",
       "address": "栃木県日光市中宮祠２４８５－２"
-    },
-    {
-      "id": 648025,
-      "title": "「クラブ ル・ジャルダン」スタンプラリー",
-      "organizer": "株式会社エーアンドエム",
-      "startDate": "2026-06-04",
-      "endDate": "2026-07-01",
-      "dateText": "2026年6月4日 - 2026年7月1日",
-      "stampMethod": "AI写真判定方式、QRコード方式、GPS方式",
-      "rewardMethod": "電子チケット",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=648025",
-      "address": "東京都中央区銀座8-6-22"
     },
     {
       "id": 650437,
