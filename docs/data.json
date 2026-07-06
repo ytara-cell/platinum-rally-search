@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-07-05T03:18:12.752808",
-  "today": "2026-07-05",
-  "total": 15,
+  "fetchedAt": "2026-07-06T03:26:01.821969",
+  "today": "2026-07-06",
+  "total": 14,
   "rallies": [
     {
       "id": 551697,
@@ -100,20 +100,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=627899",
       "address": "鳥取県倉吉市駄経寺町１９８－４"
-    },
-    {
-      "id": 648014,
-      "title": "ワイハピピック　デジタルスタンプラリー",
-      "organizer": "スパリゾートハワイアンズ",
-      "startDate": "2026-05-22",
-      "endDate": "2026-07-05",
-      "dateText": "2026年5月22日 - 2026年7月5日",
-      "stampMethod": "AI写真判定方式、QRコード方式",
-      "rewardMethod": "ダウンロード",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=648014",
-      "address": "福島県いわき市常磐藤原町蕨平50"
     },
     {
       "id": 648018,
