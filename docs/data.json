@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-07-12T02:38:59.540656",
-  "today": "2026-07-12",
-  "total": 14,
+  "fetchedAt": "2026-07-13T02:40:29.716128",
+  "today": "2026-07-13",
+  "total": 13,
   "rallies": [
     {
       "id": 551697,
@@ -184,20 +184,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=648031",
       "address": "愛知県蒲郡市海陽町2丁目3-1"
-    },
-    {
-      "id": 648034,
-      "title": "HEP-FIVEすとぷりスタンプラリー",
-      "organizer": "株式会社STPR",
-      "startDate": "2026-06-22",
-      "endDate": "2026-07-12",
-      "dateText": "2026年6月22日 - 2026年7月12日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "電子チケット",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=648034",
-      "address": "大阪府大阪市北区角田町5-15"
     }
   ]
 }
