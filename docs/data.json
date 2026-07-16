@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-07-15T02:22:26.638844",
-  "today": "2026-07-15",
-  "total": 13,
+  "fetchedAt": "2026-07-16T02:30:02.641427",
+  "today": "2026-07-16",
+  "total": 14,
   "rallies": [
     {
       "id": 551697,
@@ -172,18 +172,32 @@
       "address": "千葉県夷隅郡御宿町六軒町５０５−１"
     },
     {
-      "id": 648031,
-      "title": "「KING OF PRISM」デジタルスタンプラリー \"STORY2 ラグーナ プリズムスタァラリー\"",
-      "organizer": "株式会社ラグーナテンボス",
-      "startDate": "2026-06-16",
-      "endDate": "2026-07-15",
-      "dateText": "2026年6月16日 - 2026年7月15日",
-      "stampMethod": "GPS方式、選択式クイズ方式",
-      "rewardMethod": "",
+      "id": 663153,
+      "title": "Tokyo walking tour",
+      "organizer": "東京ヤクルト販売株式会社",
+      "startDate": "2026-07-01",
+      "endDate": "2026-09-30",
+      "dateText": "2026月7月1日 - 2026年9月30日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "電子チケット",
       "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=648031",
-      "address": "愛知県蒲郡市海陽町2丁目3-1"
+      "caseUrl": "https://stamprally.digital/showcase/#id1795",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=663153",
+      "address": "東京都台東区浅草４丁目１７−１"
+    },
+    {
+      "id": 663154,
+      "title": "「行こう、学ぼう、防災体験」デジタルスタンプチャレンジ",
+      "organizer": "東京都教育委員会",
+      "startDate": "2026-07-01",
+      "endDate": "2027-03-31",
+      "dateText": "2026年7月1日 - 2027年3月31日",
+      "stampMethod": "記述式クイズ方式",
+      "rewardMethod": "電子チケット",
+      "url": "",
+      "caseUrl": "https://stamprally.digital/showcase/#id1744",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=663154",
+      "address": "東京都豊島区西池袋2丁目37番地8号"
     }
   ]
 }
