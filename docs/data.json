@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-07-16T02:30:02.641427",
-  "today": "2026-07-16",
-  "total": 14,
+  "fetchedAt": "2026-07-17T02:32:20.553479",
+  "today": "2026-07-17",
+  "total": 17,
   "rallies": [
     {
       "id": 551697,
@@ -102,6 +102,20 @@
       "address": "鳥取県倉吉市駄経寺町１９８－４"
     },
     {
+      "id": 663457,
+      "title": "「くろしお一択」デジタルスタンプラリー",
+      "organizer": "紀勢本線活性化促進協議会",
+      "startDate": "2026-05-18",
+      "endDate": "2026-11-30",
+      "dateText": "2026年5月18日 - 2026年11月30日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=663457",
+      "address": "和歌山県西牟婁郡白浜町堅田１４７４"
+    },
+    {
       "id": 648018,
       "title": "東急レディスゴルフ2026スタンプラリー",
       "organizer": "東急レディスゴルフ2026大会事務局",
@@ -170,6 +184,34 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=648030",
       "address": "千葉県夷隅郡御宿町六軒町５０５−１"
+    },
+    {
+      "id": 663454,
+      "title": "２りんかんスタンプラリー2026【Hokkaido】",
+      "organizer": "株式会社２りんかんイエローハット",
+      "startDate": "2026-06-20",
+      "endDate": "2026-07-31",
+      "dateText": "2026年6月20日 - 2026年7月31日",
+      "stampMethod": "QRコード方式、GPS方式",
+      "rewardMethod": "電子チケット、応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=663454",
+      "address": "北海道札幌市清田区里塚２条７丁目１−１"
+    },
+    {
+      "id": 663455,
+      "title": "農産物直売所デジタルスタンプラリー2026",
+      "organizer": "こだいら観光まちづくり協会",
+      "startDate": "2026-06-27",
+      "endDate": "2026-07-25",
+      "dateText": "2026年6月27日 - 2026年7月25日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "電子チケット",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=663455",
+      "address": "東京都小平市美園町２丁目１６−１０"
     },
     {
       "id": 663153,
