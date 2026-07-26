@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-07-25T02:32:33.369550",
-  "today": "2026-07-25",
-  "total": 17,
+  "fetchedAt": "2026-07-26T02:39:57.857218",
+  "today": "2026-07-26",
+  "total": 16,
   "rallies": [
     {
       "id": 551697,
@@ -198,20 +198,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=663454",
       "address": "北海道札幌市清田区里塚２条７丁目１−１"
-    },
-    {
-      "id": 663455,
-      "title": "農産物直売所デジタルスタンプラリー2026",
-      "organizer": "こだいら観光まちづくり協会",
-      "startDate": "2026-06-27",
-      "endDate": "2026-07-25",
-      "dateText": "2026年6月27日 - 2026年7月25日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "電子チケット",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=663455",
-      "address": "東京都小平市美園町２丁目１６−１０"
     },
     {
       "id": 663153,
