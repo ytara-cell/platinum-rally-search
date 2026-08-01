@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-07-31T02:42:11.230507",
-  "today": "2026-07-31",
-  "total": 15,
+  "fetchedAt": "2026-08-01T02:40:42.319481",
+  "today": "2026-08-01",
+  "total": 13,
   "rallies": [
     {
       "id": 551697,
@@ -144,20 +144,6 @@
       "address": "栃木県日光市中宮祠２４８５－２"
     },
     {
-      "id": 650437,
-      "title": "ガタガタニイガタ キャンペーン ～来ないとわからない、ニイガタ～ デジタルスタンプラリー",
-      "organizer": "新潟市",
-      "startDate": "2026-06-13",
-      "endDate": "2026-07-31",
-      "dateText": "2026年6月13日 - 2026年7月31日",
-      "stampMethod": "QRコード方式、GPS方式",
-      "rewardMethod": "応募フォーム",
-      "url": "",
-      "caseUrl": "https://stamprally.digital/showcase/#id1752",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=650437",
-      "address": "新潟市中央区万代1-2-6 トーカングランドマンション1F"
-    },
-    {
       "id": 648030,
       "title": "夷隅のふうど満喫スタンプラリー2026",
       "organizer": "県民の日夷隅地域実行委員会",
@@ -170,20 +156,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=648030",
       "address": "千葉県夷隅郡御宿町六軒町５０５−１"
-    },
-    {
-      "id": 663454,
-      "title": "２りんかんスタンプラリー2026【Hokkaido】",
-      "organizer": "株式会社２りんかんイエローハット",
-      "startDate": "2026-06-20",
-      "endDate": "2026-07-31",
-      "dateText": "2026年6月20日 - 2026年7月31日",
-      "stampMethod": "QRコード方式、GPS方式",
-      "rewardMethod": "電子チケット、応募フォーム",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=663454",
-      "address": "北海道札幌市清田区里塚２条７丁目１−１"
     },
     {
       "id": 663153,
