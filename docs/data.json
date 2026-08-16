@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-08-15T01:08:17.963719",
-  "today": "2026-08-15",
-  "total": 13,
+  "fetchedAt": "2026-08-16T01:12:49.574983",
+  "today": "2026-08-16",
+  "total": 12,
   "rallies": [
     {
       "id": 551697,
@@ -72,20 +72,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=627887",
       "address": "米子市淀江町佐陀1605-1"
-    },
-    {
-      "id": 627899,
-      "title": "6エリアスマホでスタンプラリー2026（春夏）",
-      "organizer": "鳥取中部観光推進機構",
-      "startDate": "2026-04-25",
-      "endDate": "2026-08-15",
-      "dateText": "2026年4月25日 - 2026年8月15日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "応募フォーム",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=627899",
-      "address": "鳥取県倉吉市駄経寺町１９８－４"
     },
     {
       "id": 663457,
