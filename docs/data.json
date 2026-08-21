@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-08-20T01:08:16.284806",
-  "today": "2026-08-20",
-  "total": 14,
+  "fetchedAt": "2026-08-21T01:11:49.319163",
+  "today": "2026-08-21",
+  "total": 17,
   "rallies": [
     {
       "id": 551697,
@@ -158,6 +158,20 @@
       "address": "東京都台東区浅草４丁目１７−１"
     },
     {
+      "id": 682944,
+      "title": "てげもらえるっちゃが！何でも極上！みやざきNANGOKUスタンプラリー2026",
+      "organizer": "宮崎県観光協会",
+      "startDate": "2026-07-01",
+      "endDate": "2027-02-28",
+      "dateText": "2026年7月1日 - 2027年2月28日",
+      "stampMethod": "QRコード方式、GPS方式",
+      "rewardMethod": "応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=682944",
+      "address": "宮崎県日向市上町1-73"
+    },
+    {
       "id": 663154,
       "title": "「行こう、学ぼう、防災体験」デジタルスタンプチャレンジ",
       "organizer": "東京都教育委員会",
@@ -170,6 +184,34 @@
       "caseUrl": "https://stamprally.digital/showcase/#id1744",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=663154",
       "address": "東京都豊島区西池袋2丁目37番地8号"
+    },
+    {
+      "id": 682945,
+      "title": "DECA!BEATといっしょに！デカボミッション vol.1",
+      "organizer": "Earth hacks株式会社",
+      "startDate": "2026-07-09",
+      "endDate": "2027-07-08",
+      "dateText": "2026月7月9日 - 2027年7月8日",
+      "stampMethod": "AI写真判定方式",
+      "rewardMethod": "外部リンク",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=682945",
+      "address": "東京都渋谷区渋谷3丁目6-15"
+    },
+    {
+      "id": 682950,
+      "title": "官公庁デジタルマップ・ラリー　全国棚田行脚スタンプラリー！",
+      "organizer": "農林水産省",
+      "startDate": "2026-07-15",
+      "endDate": "2026-11-30",
+      "dateText": "2026年7月15日 - 2026年11月30日",
+      "stampMethod": "GPS方式",
+      "rewardMethod": "外部リンク",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=682950",
+      "address": "長野県飯山市瑞穂2012"
     },
     {
       "id": 682915,
