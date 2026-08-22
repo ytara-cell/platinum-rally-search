@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-08-21T01:11:49.319163",
-  "today": "2026-08-21",
-  "total": 17,
+  "fetchedAt": "2026-08-22T01:07:59.749444",
+  "today": "2026-08-22",
+  "total": 22,
   "rallies": [
     {
       "id": 551697,
@@ -214,6 +214,62 @@
       "address": "長野県飯山市瑞穂2012"
     },
     {
+      "id": 683401,
+      "title": "ふくしまピーチホリデイ2026 デジタルスタンプラリー",
+      "organizer": "福島市観光コンベンション協会",
+      "startDate": "2026-07-15",
+      "endDate": "2027-06-30",
+      "dateText": "2026年7月15日 - 2027年6月30日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "外部リンク",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=683401",
+      "address": "福島県福島市飯坂町平野森前５０−１"
+    },
+    {
+      "id": 683408,
+      "title": "ECO EDO 日本橋 2026 スタンプラリー",
+      "organizer": "三井不動産ビルマネジメント株式会社",
+      "startDate": "2026-07-17",
+      "endDate": "2026-08-31",
+      "dateText": "2026年7月17日 - 2026年8月31日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "ルーレット",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=683408",
+      "address": "東京都中央区日本橋室町２丁目２−１"
+    },
+    {
+      "id": 683407,
+      "title": "ニセコ満喫スタンプラリー2026",
+      "organizer": "ニセコ町商工会",
+      "startDate": "2026-07-17",
+      "endDate": "2026-11-01",
+      "dateText": "2026年7月17日 - 2026年11月1日",
+      "stampMethod": "QRコード方式、GPS方式",
+      "rewardMethod": "電子チケット、応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=683407",
+      "address": "北海道虻田郡ニセコ町曽我８８８−１"
+    },
+    {
+      "id": 683409,
+      "title": "つぶらな瞳の仲間達の湘南大作戦in湘南　デジタルラリー 【第1弾】",
+      "organizer": "住商アーバン開発株式会社",
+      "startDate": "2026-07-18",
+      "endDate": "2026-08-30",
+      "dateText": "2026年7月18日 - 2026年8月30日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "ルーレット",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=683409",
+      "address": "神奈川県藤沢市辻堂神台1丁目3-1"
+    },
+    {
       "id": 682915,
       "title": "間違い探しAIラリー グッド＆ラッキーのお助けクエスト",
       "organizer": "株式会社よみうりランド",
@@ -240,6 +296,20 @@
       "caseUrl": "https://stamprally.digital/showcase/#id1820",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=682916",
       "address": "静岡県裾野市須山字藤原2255-27"
+    },
+    {
+      "id": 683410,
+      "title": "STPR10周年記念デジタルスタンプラリー",
+      "organizer": "株式会社STPR",
+      "startDate": "2026-08-07",
+      "endDate": "2026-08-30",
+      "dateText": "2026年8月7日 - 2026年8月30日",
+      "stampMethod": "GPS方式",
+      "rewardMethod": "ダウンロード",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=683410",
+      "address": "東京都渋谷区桜丘町1番1号"
     }
   ]
 }
