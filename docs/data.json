@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-08-30T03:46:20.701754",
-  "today": "2026-08-30",
-  "total": 22,
+  "fetchedAt": "2026-08-31T03:48:03.176426",
+  "today": "2026-08-31",
+  "total": 19,
   "rallies": [
     {
       "id": 551697,
@@ -256,34 +256,6 @@
       "address": "北海道虻田郡ニセコ町曽我８８８−１"
     },
     {
-      "id": 683409,
-      "title": "つぶらな瞳の仲間達の湘南大作戦in湘南　デジタルラリー 【第1弾】",
-      "organizer": "住商アーバン開発株式会社",
-      "startDate": "2026-07-18",
-      "endDate": "2026-08-30",
-      "dateText": "2026年7月18日 - 2026年8月30日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "ルーレット",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=683409",
-      "address": "神奈川県藤沢市辻堂神台1丁目3-1"
-    },
-    {
-      "id": 682915,
-      "title": "間違い探しAIラリー グッド＆ラッキーのお助けクエスト",
-      "organizer": "株式会社よみうりランド",
-      "startDate": "2026-07-18",
-      "endDate": "2026-08-30",
-      "dateText": "2026年7月18日 - 2026年8月30日",
-      "stampMethod": "AI写真判定方式、AI音声判定方式、選択式クイズ方式",
-      "rewardMethod": "応募フォーム、ルーレット",
-      "url": "",
-      "caseUrl": "https://stamprally.digital/showcase/#id1781",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=682915",
-      "address": "神奈川県川崎市多摩区菅仙谷４丁目１−１"
-    },
-    {
       "id": 682916,
       "title": "歩いて学ぼう！ ウォーキングサファリ デジタルスタンプラリー",
       "organizer": "富士サファリパーク",
@@ -296,20 +268,6 @@
       "caseUrl": "https://stamprally.digital/showcase/#id1820",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=682916",
       "address": "静岡県裾野市須山字藤原2255-27"
-    },
-    {
-      "id": 683410,
-      "title": "STPR10周年記念デジタルスタンプラリー",
-      "organizer": "株式会社STPR",
-      "startDate": "2026-08-07",
-      "endDate": "2026-08-30",
-      "dateText": "2026年8月7日 - 2026年8月30日",
-      "stampMethod": "GPS方式",
-      "rewardMethod": "ダウンロード",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=683410",
-      "address": "東京都渋谷区桜丘町1番1号"
     }
   ]
 }
