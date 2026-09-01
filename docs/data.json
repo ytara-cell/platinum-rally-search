@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-08-31T03:48:03.176426",
-  "today": "2026-08-31",
-  "total": 19,
+  "fetchedAt": "2026-09-01T03:41:14.232735",
+  "today": "2026-09-01",
+  "total": 15,
   "rallies": [
     {
       "id": 551697,
@@ -16,34 +16,6 @@
       "caseUrl": "https://stamprally.digital/showcase/#id1348",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=551697",
       "address": "愛知県半田市東郷町２丁目４１"
-    },
-    {
-      "id": 596551,
-      "title": "パラノマサイト×伊勢志摩 デジタルスタンプラリー",
-      "organizer": "伊勢志摩観光コンベンション機構",
-      "startDate": "2026-03-09",
-      "endDate": "2026-08-31",
-      "dateText": "2026月3月9日 - 2026年8月31日",
-      "stampMethod": "QRコード方式、GPS方式",
-      "rewardMethod": "電子チケット",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=596551",
-      "address": "三重県鳥羽市鳥羽3-3-6"
-    },
-    {
-      "id": 627885,
-      "title": "花の心 スタンプラリー",
-      "organizer": "東京都台東区",
-      "startDate": "2026-04-01",
-      "endDate": "2026-08-31",
-      "dateText": "2026年4月1日 - 2026年8月31日",
-      "stampMethod": "QRコード方式、GPS方式",
-      "rewardMethod": "応募フォーム",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=627885",
-      "address": "東京都台東区上野公園４−６５"
     },
     {
       "id": 627886,
@@ -86,20 +58,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=663457",
       "address": "和歌山県西牟婁郡白浜町堅田１４７４"
-    },
-    {
-      "id": 648018,
-      "title": "東急レディスゴルフ2026スタンプラリー",
-      "organizer": "東急レディスゴルフ2026大会事務局",
-      "startDate": "2026-06-01",
-      "endDate": "2026-08-31",
-      "dateText": "2026年6月1日 - 2026年8月31日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "応募フォーム",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=648018",
-      "address": "神奈川県川崎市高津区下野毛地先"
     },
     {
       "id": 648021,
@@ -226,20 +184,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=683401",
       "address": "福島県福島市飯坂町平野森前５０−１"
-    },
-    {
-      "id": 683408,
-      "title": "ECO EDO 日本橋 2026 スタンプラリー",
-      "organizer": "三井不動産ビルマネジメント株式会社",
-      "startDate": "2026-07-17",
-      "endDate": "2026-08-31",
-      "dateText": "2026年7月17日 - 2026年8月31日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "ルーレット",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=683408",
-      "address": "東京都中央区日本橋室町２丁目２−１"
     },
     {
       "id": 683407,
