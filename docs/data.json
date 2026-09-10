@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-09-09T03:12:48.387932",
-  "today": "2026-09-09",
-  "total": 15,
+  "fetchedAt": "2026-09-10T03:12:24.904397",
+  "today": "2026-09-10",
+  "total": 17,
   "rallies": [
     {
       "id": 551697,
@@ -212,6 +212,34 @@
       "caseUrl": "https://stamprally.digital/showcase/#id1820",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=682916",
       "address": "静岡県裾野市須山字藤原2255-27"
+    },
+    {
+      "id": 687349,
+      "title": "きよたスイーツスタンプラリー",
+      "organizer": "札幌市清田区",
+      "startDate": "2026-08-01",
+      "endDate": "2026-10-31",
+      "dateText": "2026年8月1日 - 2026年10月31日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "応募フォーム",
+      "url": "",
+      "caseUrl": "https://stamprally.digital/showcase/#id1838",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=687349",
+      "address": "札幌市清田区美しが丘２条２丁目９－10"
+    },
+    {
+      "id": 687350,
+      "title": "郡山城になりきった「やま」が登場！？　ひでながさんの足跡をめぐるデジタルスタンプラリー",
+      "organizer": "奈良県観光局",
+      "startDate": "2026-08-01",
+      "endDate": "2027-01-31",
+      "dateText": "2026年8月1日 - 2027年1月31日",
+      "stampMethod": "GPS方式",
+      "rewardMethod": "応募フォーム、ダウンロード",
+      "url": "",
+      "caseUrl": "https://stamprally.digital/showcase/#id1849",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=687350",
+      "address": "奈良県大和郡山市城内町２−１８"
     }
   ]
 }
