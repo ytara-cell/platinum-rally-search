@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-09-27T03:48:13.839572",
-  "today": "2026-09-27",
-  "total": 40,
+  "fetchedAt": "2026-09-28T03:47:42.379076",
+  "today": "2026-09-28",
+  "total": 39,
   "rallies": [
     {
       "id": 551697,
@@ -240,20 +240,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=689417",
       "address": "調布市深大寺元町5-10-6"
-    },
-    {
-      "id": 689384,
-      "title": "山形めぐりスタンプラリー2026 ～ひんやり夏のごほうび旅～",
-      "organizer": "DMOさくらんぼ山形",
-      "startDate": "2026-07-25",
-      "endDate": "2026-09-27",
-      "dateText": "2026年7月25日 - 2026年9月27日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "応募フォーム",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=689384",
-      "address": "山形県寒河江市八鍬 川原919-6"
     },
     {
       "id": 689403,
