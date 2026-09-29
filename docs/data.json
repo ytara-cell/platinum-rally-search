@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-09-28T03:47:42.379076",
-  "today": "2026-09-28",
-  "total": 39,
+  "fetchedAt": "2026-09-29T04:23:00.949366",
+  "today": "2026-09-29",
+  "total": 47,
   "rallies": [
     {
       "id": 551697,
@@ -494,6 +494,34 @@
       "address": "和歌山県伊都郡高野町高野山奥の院口"
     },
     {
+      "id": 692807,
+      "title": "アンクルの生みの親 柳原良平が愛した 横浜あちこちスタンプラリー",
+      "organizer": "サントリー株式会社／公帆船日本丸・横浜みなと博物館",
+      "startDate": "2026-08-17",
+      "endDate": "2026-09-30",
+      "dateText": "2026年8月17日 - 2026年9月30日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "外部リンク",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=692807",
+      "address": "神奈川県横浜市西区みなとみらい2-1-1"
+    },
+    {
+      "id": 692808,
+      "title": "ごゆるりよりみちデジタルスタンプラリー",
+      "organizer": "千代田区観光協会",
+      "startDate": "2026-08-18",
+      "endDate": "2026-10-18",
+      "dateText": "2026年8月18日 - 2026年10月18日",
+      "stampMethod": "QRコード方式、GPS方式",
+      "rewardMethod": "電子チケット、ルーレット、ダウンロード",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=692808",
+      "address": "東京都千代田区九段南１丁目６−１７"
+    },
+    {
       "id": 690270,
       "title": "‘その選択、脱炭素！’どっちば！？ 千葉県脱炭素ライフスタイル デジタルスタンプラリー",
       "organizer": "千葉県",
@@ -508,6 +536,62 @@
       "address": "千葉県千葉市中央区市場町1-1"
     },
     {
+      "id": 692824,
+      "title": "新潟Komachi-新潟ラーメン食べ歩きスタンプラリー 2026",
+      "organizer": "株式会社ニューズ･ライン",
+      "startDate": "2026-08-25",
+      "endDate": "2026-10-30",
+      "dateText": "2026年8月25日 - 2026年10月30日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "電子チケット、応募フォーム",
+      "url": "",
+      "caseUrl": "https://stamprally.digital/showcase/#id1843",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=692824",
+      "address": "新潟県新潟市中央区女池南3-2-33"
+    },
+    {
+      "id": 692810,
+      "title": "新潟Komachi-新潟ラーメン食べ歩きスタンプラリー 2026",
+      "organizer": "株式会社ニューズ･ライン",
+      "startDate": "2026-08-25",
+      "endDate": "2026-10-30",
+      "dateText": "2026年8月25日 - 2026年10月30日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "電子チケット、応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=692810",
+      "address": "新潟県新潟市中央区女池南3-2-33"
+    },
+    {
+      "id": 692812,
+      "title": "スタンプラリー「ながさき照らす旅3」",
+      "organizer": "長崎県観光連盟",
+      "startDate": "2026-08-27",
+      "endDate": "2027-02-28",
+      "dateText": "2026年8月27日 - 2027年2月28日",
+      "stampMethod": "GPS方式、選択式クイズ方式、AI写真判定方式",
+      "rewardMethod": "応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=692812",
+      "address": "長崎県東彼杵郡波佐見町井石郷２２４６−３"
+    },
+    {
+      "id": 692813,
+      "title": "オールひだかスタンプラリー＆ホースカードうま旅キャンペーン",
+      "organizer": "北海道日高振興局",
+      "startDate": "2026-09-01",
+      "endDate": "2026-11-30",
+      "dateText": "2026年9月1日 - 2026年11月30日",
+      "stampMethod": "GPS方式",
+      "rewardMethod": "応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=692813",
+      "address": "北海道日高郡新ひだか町静内本町5丁目1番21号"
+    },
+    {
       "id": 690285,
       "title": "のってあるいて巡る 奈良線 茶と古都スタンプラリー",
       "organizer": "西日本旅客鉄道株式会社",
@@ -520,6 +604,34 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=690285",
       "address": "京都府宇治市宇治東内45-26"
+    },
+    {
+      "id": 692825,
+      "title": "びわ湖サイクリングスタンプラリー",
+      "organizer": "ビワイチバイク",
+      "startDate": "2026-09-01",
+      "endDate": "2026-12-31",
+      "dateText": "2026年9月1日 - 2026年12月31日",
+      "stampMethod": "QRコード方式、GPS方式",
+      "rewardMethod": "応募フォーム、ダウンロード",
+      "url": "",
+      "caseUrl": "https://stamprally.digital/showcase/#id1916",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=692825",
+      "address": "滋賀県彦根市金亀町1-1"
+    },
+    {
+      "id": 692814,
+      "title": "社交街の飲食店巡りデジタルスタンプラリー",
+      "organizer": "与那原地区社交飲食業組合",
+      "startDate": "2026-09-01",
+      "endDate": "2026-12-31",
+      "dateText": "2026年9月1日 - 2026年12月31日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=692814",
+      "address": "与那原町字与那原997 安里アパート102"
     },
     {
       "id": 690276,
