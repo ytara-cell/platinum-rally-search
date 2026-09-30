@@ -21,11 +21,11 @@ const FIELDS = [
   { key: 'fax',        label: 'FAX',      aliases: ['fax', 'ファックス'] },
   { key: 'postal',     label: '郵便番号', aliases: ['郵便番号', '〒', 'zip'] },
   { key: 'address',    label: '住所',     aliases: ['住所', '所在地', 'address'] },
-  { key: 'url',        label: 'URL',      aliases: ['url', 'hp', 'ホームページ', 'webサイト', 'サイト'] },
+  { key: 'url',        label: 'URL',      aliases: ['url', 'hp', 'ホームページ', '会社web', 'webサイト', 'web', 'サイト'] },
   { key: 'memo',       label: 'メモ',     aliases: ['メモ', '備考', 'note'] },
 ];
 const RESPONDER_ALIASES = ['対応者', '対応', '営業担当'];
-const DATE_ALIASES = ['日付', '登録日', '取得日', '交換日', '受付日', '日時', 'date'];
+const DATE_ALIASES = ['対応日', '日付', '登録日', '取得日', '交換日', '受付日', '日時', 'date'];
 
 function doGet() {
   const t = HtmlService.createTemplateFromFile('index');
@@ -125,54 +125,68 @@ function parseCardText(text) {
   return card;
 }
 
-/** 確認済みの項目をスプレッドシートに追記する */
+/** 確認済みの項目をスプレッドシートの表の最初の空き行に書き込む */
 function appendCard(card) {
   const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
   const sheet = SHEET_NAME ? ss.getSheetByName(SHEET_NAME) : ss.getSheets()[0];
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
   try {
-    let lastCol = sheet.getLastColumn();
-    let headers = lastCol > 0 ? sheet.getRange(1, 1, 1, lastCol).getValues()[0].map(String) : [];
-
-    // 見出しが無い空のシートなら見出し行を作る
-    if (headers.every(h => h.trim() === '')) {
-      headers = ['日付'].concat(FIELDS.map(f => f.label), ['対応者']);
-      sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
-      lastCol = headers.length;
-    }
+    const lastRow = Math.max(sheet.getLastRow(), 1);
+    const lastCol = Math.max(sheet.getLastColumn(), 1);
+    const values = sheet.getRange(1, 1, lastRow, lastCol).getDisplayValues();
 
     const norm = s => String(s).replace(/[\s　]/g, '').toLowerCase();
-    const findCol = aliases => {
+    const allAliases = [RESPONDER_ALIASES, DATE_ALIASES].concat(FIELDS.map(f => f.aliases));
+    const matchCol = (headers, aliases) => {
       const a = aliases.map(norm);
       let i = headers.findIndex(h => a.indexOf(norm(h)) >= 0);
-      if (i < 0) i = headers.findIndex(h => h && a.some(x => norm(h).indexOf(x) >= 0));
+      if (i < 0) i = headers.findIndex(h => norm(h) && a.some(x => norm(h).indexOf(x) >= 0));
       return i;
     };
 
-    const row = new Array(headers.length).fill('');
-    const used = {};
-    const put = (aliases, value) => {
-      const i = findCol(aliases);
-      if (i >= 0 && !used[i]) { row[i] = value; used[i] = true; return true; }
-      return false;
-    };
+    // 見出し行を探す（上から30行のうち、見出し名が一番多く当てはまる行）
+    let headerRow = -1, best = 1;
+    for (let r = 0; r < Math.min(values.length, 30); r++) {
+      const exact = allAliases.filter(a => values[r].some(h => a.map(norm).indexOf(norm(h)) >= 0)).length;
+      if (exact > best) { best = exact; headerRow = r; }
+    }
+    if (headerRow < 0) throw new Error('見出し行（会社名・名前・対応者など）が見つかりませんでした');
+    const headers = values[headerRow];
 
+    // 列の対応を決める（同じ列に二重に入れない）
+    const used = {};
+    const cells = {};
+    const put = (aliases, value) => {
+      const i = matchCol(headers.map((h, j) => used[j] ? '' : h), aliases);
+      if (i < 0) return false;
+      used[i] = true;
+      if (value) cells[i] = value;
+      return true;
+    };
     put(RESPONDER_ALIASES, RESPONDER);
     put(DATE_ALIASES, Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyy/MM/dd'));
+    if (!card.phone && card.mobile) { card.phone = card.mobile; card.mobile = ''; }
     const leftovers = [];
     FIELDS.forEach(f => {
       const v = (card[f.key] || '').trim();
+      if (f.key === 'memo') return;
       if (!put(f.aliases, v) && v) leftovers.push(f.label + ': ' + v);
     });
-    // 対応する列が無い項目は「メモ/備考」列にまとめる（あれば）
-    if (leftovers.length) {
-      const i = findCol(['メモ', '備考', 'note']);
-      if (i >= 0) row[i] = [row[i]].concat(leftovers).filter(Boolean).join(' / ');
-    }
+    const memo = [(card.memo || '').trim()].concat(leftovers).filter(Boolean).join(' / ');
+    if (memo) put(['メモ', '備考', 'note'], memo);
 
-    sheet.appendRow(row);
-    return { row: sheet.getLastRow(), sheet: sheet.getName() };
+    // 表の中で、対応づけた列がすべて空いている最初の行を探す
+    const cols = Object.keys(used).map(Number);
+    let target = -1;
+    for (let r = headerRow + 1; r < values.length; r++) {
+      if (cols.every(c => values[r][c] === '')) { target = r; break; }
+    }
+    const rowNum = target >= 0 ? target + 1 : values.length + 1;
+
+    // 値のある列だけ書き込む（他の列の書式・プルダウン・数式は触らない）
+    Object.keys(cells).forEach(c => sheet.getRange(rowNum, Number(c) + 1).setValue(cells[c]));
+    return { row: rowNum, sheet: sheet.getName() };
   } finally {
     lock.releaseLock();
   }
