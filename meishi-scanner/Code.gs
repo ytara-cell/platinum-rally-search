@@ -1,13 +1,12 @@
 /**
  * 名刺スキャナー
- * スマホのカメラで名刺を撮影 → Claude で項目を読み取り → 確認・修正 → スプレッドシートに追記。
+ * スマホのカメラで名刺を撮影 → Google ドライブの無料OCRで読み取り → 確認・修正 → スプレッドシートに追記。
  * 「対応者」列には常に RESPONDER（多良）を記入する。
  */
 
 const SPREADSHEET_ID = '1jApTwQmymraPikdQAngU0UCyxiYi7L1bQZr9tRTzQHw';
 const SHEET_NAME = ''; // 空なら先頭のシートに追記
 const RESPONDER = '多良';
-const MODEL = 'claude-opus-5-5';
 
 // 読み取り項目と、スプレッドシートの見出しとして認識する名前の候補
 const FIELDS = [
@@ -37,55 +36,93 @@ function doGet() {
     .addMetaTag('viewport', 'width=device-width, initial-scale=1');
 }
 
-/** 画像（base64 JPEG）から名刺の項目を読み取る */
+/** 画像（base64 JPEG）から名刺の項目を読み取る（Google ドライブの無料OCRを使用） */
 function extractCard(base64Jpeg) {
-  const apiKey = PropertiesService.getScriptProperties().getProperty('ANTHROPIC_API_KEY');
-  if (!apiKey) throw new Error('スクリプト プロパティに ANTHROPIC_API_KEY が設定されていません');
+  const blob = Utilities.newBlob(Utilities.base64Decode(base64Jpeg), 'image/jpeg', 'meishi.jpg');
+  // 画像を Google ドキュメントに変換すると OCR された文字が入る。読み取ったらすぐ削除する
+  const file = Drive.Files.create(
+    { name: '名刺OCR_一時ファイル', mimeType: 'application/vnd.google-apps.document' },
+    blob,
+    { ocrLanguage: 'ja' }
+  );
+  let text;
+  try {
+    text = DocumentApp.openById(file.id).getBody().getText();
+  } finally {
+    Drive.Files.remove(file.id);
+  }
+  if (!text.trim()) throw new Error('文字を読み取れませんでした。明るい場所で名刺を大きく撮り直してください');
+  return parseCardText(text);
+}
 
-  const properties = {};
-  FIELDS.forEach(f => { properties[f.key] = { type: 'string', description: f.label }; });
+/** OCR した文字列を項目に振り分ける（簡易ルール。画面で確認・修正する前提） */
+function parseCardText(text) {
+  const card = {};
+  FIELDS.forEach(f => { card[f.key] = ''; });
+  let lines = text.normalize('NFKC').split(/\r?\n/).map(s => s.replace(/\s+/g, ' ').trim()).filter(Boolean);
+  const rest = [];
+  const phoneRe = /(?:\+81[-\s]?|\(?0)\d{1,4}\)?[-\s.)]?\d{1,4}[-\s.]?\d{3,4}/;
 
-  const body = {
-    model: MODEL,
-    max_tokens: 4000,
-    output_config: {
-      effort: 'low',
-      format: {
-        type: 'json_schema',
-        schema: {
-          type: 'object',
-          properties: properties,
-          required: FIELDS.map(f => f.key),
-          additionalProperties: false,
-        },
-      },
-    },
-    messages: [{
-      role: 'user',
-      content: [
-        { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: base64Jpeg } },
-        { type: 'text', text:
-          'この名刺画像から各項目を読み取ってください。記載のない項目は空文字にしてください。' +
-          '電話番号はハイフン区切り、メールアドレス・URLは半角で。' +
-          'memo には他の項目に入らない情報（資格・SNSなど）があれば簡潔に入れてください。' },
-      ],
-    }],
+  lines.forEach(line => {
+    let l = line;
+    const email = l.match(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/);
+    if (email) { if (!card.email) card.email = email[0]; l = l.replace(email[0], ''); }
+    const url = l.match(/(?:https?:\/\/|www\.)[^\s]+/i);
+    if (url) { if (!card.url) card.url = url[0]; l = l.replace(url[0], ''); }
+    if (email || url) l = l.replace(/E-?mail|Mail|URL|HP|Web/gi, '');
+
+    // 電話・携帯・FAX（1行に複数あることもある）
+    let m;
+    const re = new RegExp('((?:TEL|Tel|T|電話|FAX|Fax|F|携帯|Mobile|MOBILE|M)[\\s.:：]*)?(' + phoneRe.source + ')', 'g');
+    let found = false;
+    while ((m = re.exec(l)) !== null) {
+      const label = (m[1] || '').toUpperCase();
+      const num = m[2].replace(/[\s.]/g, '-').replace(/\((\d+)\)/, '$1-').replace(/--+/g, '-');
+      const digits = num.replace(/\D/g, '');
+      if (digits.length < 10 || /〒/.test(l.slice(Math.max(0, m.index - 2), m.index + 1))) continue;
+      found = true;
+      if (/^F/.test(label)) { if (!card.fax) card.fax = num; }
+      else if (/携帯|^M/.test(label) || /^(?:81)?0?[789]0/.test(digits)) { if (!card.mobile) card.mobile = num; else if (!card.phone) card.phone = num; }
+      else if (!card.phone) card.phone = num;
+      else if (!card.fax) card.fax = num;
+    }
+    if (found) l = l.replace(new RegExp(phoneRe.source, 'g'), '').replace(/(?:TEL|Tel|FAX|Fax|電話|携帯|Mobile|MOBILE)[\s.:：]*/g, '').replace(/(?:^|\s)[TFM][\s.:：]*(?=\s|$)/g, ' ');
+
+    const postal = l.match(/〒?\s*(\d{3})-(\d{4})/);
+    if (postal && !card.postal) { card.postal = postal[1] + '-' + postal[2]; l = l.replace(postal[0], ''); }
+
+    l = l.replace(/^[\s/|:：・,]+|[\s/|:：・,]+$/g, '');
+    if (l) rest.push(l);
+  });
+
+  const take = (pred, key, map) => {
+    if (card[key]) return;
+    const i = rest.findIndex(pred);
+    if (i >= 0) card[key] = map ? map(rest[i], i) : rest.splice(i, 1)[0];
   };
 
-  const res = UrlFetchApp.fetch('https://api.anthropic.com/v1/messages', {
-    method: 'post',
-    contentType: 'application/json',
-    headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
-    payload: JSON.stringify(body),
-    muteHttpExceptions: true,
-  });
-  const code = res.getResponseCode();
-  const json = JSON.parse(res.getContentText());
-  if (code !== 200) throw new Error('読み取りに失敗しました (' + code + '): ' + (json.error && json.error.message));
-  if (json.stop_reason === 'refusal') throw new Error('この画像は読み取れませんでした');
+  take(l => /(北海道|東京都|京都府|大阪府|.{1,3}県)\S*[市区町村郡]|[市区町村].*\d|丁目|番地/.test(l), 'address');
+  take(l => /株式会社|有限会社|合同会社|合資会社|(?:一般|公益)?(?:社団|財団)法人|NPO法人|協会|組合|機構|大学|役場|市役所|町役場|\(株\)|㈱|Inc\.?|Co\.,?|Ltd|Corporation|LLC/i.test(l), 'company');
 
-  const text = json.content.filter(b => b.type === 'text').map(b => b.text).join('');
-  return JSON.parse(text);
+  const titleRe = /(代表取締役(?:社長)?|事務局長|局長|取締役|代表理事|理事長|理事|会長|社長|副社長|専務|常務|執行役員|支店長|支社長|本部長|部長|次長|室長|課長|係長|所長|主任|主査|主事|店長|マネージャー|マネジャー|リーダー|ディレクター|プロデューサー|CEO|COO|CTO|CFO|Manager|Director|President|担当)(?:代理|補佐)?/;
+  const deptRe = /\S*(?:本部|事業部|部|課|室|局|グループ|チーム|センター|支店|営業所|Division|Department|Dept)/;
+  for (let i = 0; i < rest.length && !(card.title && card.department); i++) {
+    const l = rest[i];
+    const t = l.match(titleRe);
+    const d = !t || l.replace(t[0], '').trim() ? l.replace(t ? t[0] : '', '').trim().match(deptRe) : null;
+    if (!t && !(d && l.length <= 30)) continue;
+    if (t && !card.title) card.title = t[0];
+    if (d && !card.department && l.length <= 40) card.department = l.replace(t ? t[0] : '', '').trim();
+    rest.splice(i--, 1);
+  }
+
+  take(l => /^[ぁ-んァ-ヶー\s]{2,20}$/.test(l), 'name_kana');
+  take(l => /^[一-龠々〆ヵヶぁ-んァ-ヶー]{1,5} [一-龠々〆ヵヶぁ-んァ-ヶー]{1,6}$/.test(l), 'name');
+  take(l => /^[一-龠々〆ヵヶ]{2,6}$/.test(l), 'name');
+  take(l => /^[A-Z][a-z]+ [A-Z][a-z]+$/.test(l) || /^[A-Z]+ [A-Z]+$/.test(l), 'name');
+
+  card.memo = rest.join(' / ');
+  return card;
 }
 
 /** 確認済みの項目をスプレッドシートに追記する */
