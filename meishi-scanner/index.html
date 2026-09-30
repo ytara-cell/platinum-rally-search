@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<base target="_top">
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Meiryo", sans-serif; background: #f5f5f5; color: #333; }
+  header { background: #1a1a2e; color: #fff; padding: 16px; text-align: center; }
+  header h1 { margin: 0; font-size: 1.2rem; }
+  header p { margin: 4px 0 0; font-size: .8rem; opacity: .7; }
+  main { max-width: 560px; margin: 0 auto; padding: 16px; }
+  .btn { display: block; width: 100%; padding: 16px; border: 0; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; }
+  .primary { background: #1a1a2e; color: #fff; }
+  .secondary { background: #e0e0e0; color: #333; margin-top: 8px; }
+  .btn:disabled { opacity: .5; }
+  #preview { width: 100%; border-radius: 10px; margin: 12px 0; display: none; }
+  #status { text-align: center; margin: 12px 0; font-size: .9rem; min-height: 1.2em; }
+  #status.error { color: #c62828; }
+  #status.ok { color: #2e7d32; }
+  form { display: none; background: #fff; border-radius: 10px; padding: 12px; }
+  label { display: block; font-size: .75rem; color: #777; margin-top: 10px; }
+  input { width: 100%; padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 6px; }
+  input[readonly] { background: #f0f0f0; }
+  input[type=file] { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>名刺スキャナー</h1>
+  <p>撮影 → 内容を確認 → スプレッドシートに追記（対応者: <?= responder ?>）</p>
+</header>
+<main>
+  <label for="camera" class="btn primary" id="shoot" style="text-align:center;color:#fff;margin:0">📷 名刺を撮影する</label>
+  <input type="file" id="camera" accept="image/*" capture="environment">
+  <img id="preview" alt="">
+  <div id="status"></div>
+
+  <form id="form">
+    <? for (var i = 0; i < fields.length; i++) { ?>
+      <label for="f_<?= fields[i].key ?>"><?= fields[i].label ?></label>
+      <input id="f_<?= fields[i].key ?>" name="<?= fields[i].key ?>" autocomplete="off">
+    <? } ?>
+    <label>対応者</label>
+    <input value="<?= responder ?>" readonly>
+    <button type="submit" class="btn primary" id="save" style="margin-top:16px">スプレッドシートに追記</button>
+    <button type="button" class="btn secondary" id="reset">やり直す</button>
+  </form>
+</main>
+<script>
+  const camera = document.getElementById('camera');
+  const preview = document.getElementById('preview');
+  const status = document.getElementById('status');
+  const form = document.getElementById('form');
+  const save = document.getElementById('save');
+
+  function setStatus(msg, cls) { status.textContent = msg; status.className = cls || ''; }
+
+  // 送信サイズを抑えるため長辺1600pxのJPEGに縮小
+  function toJpegBase64(file) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        const scale = Math.min(1, 1600 / Math.max(img.width, img.height));
+        const c = document.createElement('canvas');
+        c.width = Math.round(img.width * scale);
+        c.height = Math.round(img.height * scale);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        const url = c.toDataURL('image/jpeg', 0.85);
+        preview.src = url;
+        resolve(url.split(',')[1]);
+      };
+      img.onerror = () => reject(new Error('画像を読み込めませんでした'));
+      img.src = URL.createObjectURL(file);
+    });
+  }
+
+  camera.addEventListener('change', async () => {
+    const file = camera.files[0];
+    if (!file) return;
+    form.style.display = 'none';
+    preview.style.display = 'block';
+    setStatus('読み取り中…');
+    try {
+      const b64 = await toJpegBase64(file);
+      google.script.run
+        .withSuccessHandler(card => {
+          for (const el of form.querySelectorAll('input[name]')) el.value = card[el.name] || '';
+          form.style.display = 'block';
+          save.disabled = false;
+          setStatus('内容を確認・修正してから追記してください');
+        })
+        .withFailureHandler(e => setStatus(e.message, 'error'))
+        .extractCard(b64);
+    } catch (e) {
+      setStatus(e.message, 'error');
+    }
+    camera.value = '';
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const card = {};
+    for (const el of form.querySelectorAll('input[name]')) card[el.name] = el.value;
+    save.disabled = true;
+    setStatus('追記中…');
+    google.script.run
+      .withSuccessHandler(r => {
+        setStatus('「' + r.sheet + '」の ' + r.row + ' 行目に追記しました', 'ok');
+        form.reset();
+        form.style.display = 'none';
+        preview.style.display = 'none';
+      })
+      .withFailureHandler(err => { setStatus(err.message, 'error'); save.disabled = false; })
+      .appendCard(card);
+  });
+
+  document.getElementById('reset').addEventListener('click', () => {
+    form.reset();
+    form.style.display = 'none';
+    preview.style.display = 'none';
+    setStatus('');
+  });
+</script>
+</body>
+</html>
