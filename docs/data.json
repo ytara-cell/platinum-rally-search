@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-09-29T04:23:00.949366",
-  "today": "2026-09-29",
-  "total": 47,
+  "fetchedAt": "2026-09-30T04:05:53.932119",
+  "today": "2026-09-30",
+  "total": 48,
   "rallies": [
     {
       "id": 551697,
@@ -660,6 +660,20 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=689414",
       "address": "秋田県南秋田郡八郎潟町夜叉袋中羽立１−１"
+    },
+    {
+      "id": 692878,
+      "title": "淡路市ぶらリゾートととのい巡礼フォト",
+      "organizer": "淡路市",
+      "startDate": "2026-09-15",
+      "endDate": "2026-12-14",
+      "dateText": "2026年9月15日 - 2026年12月14日",
+      "stampMethod": "AI写真判定方式",
+      "rewardMethod": "応募フォーム",
+      "url": "",
+      "caseUrl": "https://stamprally.digital/showcase/#id1887",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=692878",
+      "address": "兵庫県明石市本町２丁目１０−１"
     }
   ]
 }
