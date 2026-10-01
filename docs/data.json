@@ -1,22 +1,8 @@
 {
-  "fetchedAt": "2026-09-30T04:05:53.932119",
-  "today": "2026-09-30",
-  "total": 48,
+  "fetchedAt": "2026-10-01T04:17:55.149658",
+  "today": "2026-10-01",
+  "total": 46,
   "rallies": [
-    {
-      "id": 551697,
-      "title": "ARC御朱印ラリー",
-      "organizer": "愛知道路コンセッション株式会社",
-      "startDate": "2025-10-01",
-      "endDate": "2026-09-30",
-      "dateText": "2025年10月1日 - 2026年9月30日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "電子チケット、応募フォーム",
-      "url": "",
-      "caseUrl": "https://stamprally.digital/showcase/#id1348",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=551697",
-      "address": "愛知県半田市東郷町２丁目４１"
-    },
     {
       "id": 627886,
       "title": "いせしま結びの旅！デジタルスタンプラリー",
@@ -60,34 +46,6 @@
       "address": "和歌山県西牟婁郡白浜町堅田１４７４"
     },
     {
-      "id": 648021,
-      "title": "愛南町盛旬満喫デジタルスタンプラリー2026",
-      "organizer": "愛南びやびや広め隊",
-      "startDate": "2026-06-01",
-      "endDate": "2026-09-30",
-      "dateText": "2026年6月1日 - 2026年9月30日",
-      "stampMethod": "QRコード方式、GPS方式、SNS投稿",
-      "rewardMethod": "応募フォーム、ルーレット、外部リンク",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=648021",
-      "address": "愛媛県南宇和郡愛南町緑甲744番地"
-    },
-    {
-      "id": 648019,
-      "title": "国際避暑地日光・近代建築探訪スタンプラリー",
-      "organizer": "日光別荘めぐり連絡会議",
-      "startDate": "2026-06-01",
-      "endDate": "2026-09-30",
-      "dateText": "2026年6月1日 - 2026年9月30日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "電子チケット、応募フォーム",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=648019",
-      "address": "栃木県日光市中宮祠２４８５－２"
-    },
-    {
       "id": 648030,
       "title": "夷隅のふうど満喫スタンプラリー2026",
       "organizer": "県民の日夷隅地域実行委員会",
@@ -100,20 +58,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=648030",
       "address": "千葉県夷隅郡御宿町六軒町５０５−１"
-    },
-    {
-      "id": 663153,
-      "title": "Tokyo walking tour",
-      "organizer": "東京ヤクルト販売株式会社",
-      "startDate": "2026-07-01",
-      "endDate": "2026-09-30",
-      "dateText": "2026月7月1日 - 2026年9月30日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "電子チケット",
-      "url": "",
-      "caseUrl": "https://stamprally.digital/showcase/#id1795",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=663153",
-      "address": "東京都台東区浅草４丁目１７−１"
     },
     {
       "id": 682944,
@@ -240,34 +184,6 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=689417",
       "address": "調布市深大寺元町5-10-6"
-    },
-    {
-      "id": 689403,
-      "title": "豪華賞品が当たる！ 天童おでかけスタンプラリー２０２６",
-      "organizer": "天童市",
-      "startDate": "2026-08-01",
-      "endDate": "2026-09-30",
-      "dateText": "2026年8月1日 - 2026年9月30日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "応募フォーム",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=689403",
-      "address": "山形県天童市藤内新田1620番地１"
-    },
-    {
-      "id": 689402,
-      "title": "⼤阪ガス 節電オプション × イオン COOL de ACTION",
-      "organizer": "大阪ガス株式会社",
-      "startDate": "2026-08-01",
-      "endDate": "2026-09-30",
-      "dateText": "2026年8月1日 - 2026年9月30日",
-      "stampMethod": "GPS方式",
-      "rewardMethod": "コード発行",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=689402",
-      "address": "大阪府大阪市西区千代崎３丁目北２−13番1"
     },
     {
       "id": 689407,
@@ -494,20 +410,6 @@
       "address": "和歌山県伊都郡高野町高野山奥の院口"
     },
     {
-      "id": 692807,
-      "title": "アンクルの生みの親 柳原良平が愛した 横浜あちこちスタンプラリー",
-      "organizer": "サントリー株式会社／公帆船日本丸・横浜みなと博物館",
-      "startDate": "2026-08-17",
-      "endDate": "2026-09-30",
-      "dateText": "2026年8月17日 - 2026年9月30日",
-      "stampMethod": "QRコード方式",
-      "rewardMethod": "外部リンク",
-      "url": "",
-      "caseUrl": "",
-      "mapLink": "https://platinumaps.jp/d/platinarally?spot=692807",
-      "address": "神奈川県横浜市西区みなとみらい2-1-1"
-    },
-    {
       "id": 692808,
       "title": "ごゆるりよりみちデジタルスタンプラリー",
       "organizer": "千代田区観光協会",
@@ -578,6 +480,34 @@
       "address": "長崎県東彼杵郡波佐見町井石郷２２４６−３"
     },
     {
+      "id": 693085,
+      "title": "BEAMS HAPPY DAY スタンプラリー",
+      "organizer": "株式会社ビームス",
+      "startDate": "2026-09-01",
+      "endDate": "2026-10-31",
+      "dateText": "2026年9月1日 - 2026年10月31日",
+      "stampMethod": "QRコード方式",
+      "rewardMethod": "応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=693085",
+      "address": "東京都渋谷区神宮前3-24-7"
+    },
+    {
+      "id": 693084,
+      "title": "ぐるっとフジのお店めぐり デジタルスタンプラリー",
+      "organizer": "株式会社フジ",
+      "startDate": "2026-09-01",
+      "endDate": "2026-10-31",
+      "dateText": "2026年9月1日 - 2026年10月31日",
+      "stampMethod": "AI写真判定方式",
+      "rewardMethod": "電子チケット",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=693084",
+      "address": "広島県廿日市市城内二丁目14番10号"
+    },
+    {
       "id": 692813,
       "title": "オールひだかスタンプラリー＆ホースカードうま旅キャンペーン",
       "organizer": "北海道日高振興局",
@@ -632,6 +562,48 @@
       "caseUrl": "",
       "mapLink": "https://platinumaps.jp/d/platinarally?spot=692814",
       "address": "与那原町字与那原997 安里アパート102"
+    },
+    {
+      "id": 693083,
+      "title": "ONE PIECE 新幹線 TREASURE RALLY",
+      "organizer": "西日本旅客鉄道株式会社",
+      "startDate": "2026-09-01",
+      "endDate": "2027-01-11",
+      "dateText": "2026年9月1日 - 2027年1月11日",
+      "stampMethod": "QRコード方式、GPS方式",
+      "rewardMethod": "外部リンク",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=693083",
+      "address": "大阪府大阪市淀川区西中島５丁目１６－１"
+    },
+    {
+      "id": 693082,
+      "title": "安芸市観光デジタルスタンプラリー",
+      "organizer": "安芸市商工",
+      "startDate": "2026-09-01",
+      "endDate": "2027-01-31",
+      "dateText": "2026年9月1日 - 2027年1月31日",
+      "stampMethod": "QRコード方式、GPS方式",
+      "rewardMethod": "電子チケット、応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=693082",
+      "address": "香南市野市町大谷738"
+    },
+    {
+      "id": 693081,
+      "title": "奥四万十 泊まらんと！巡らんと！キャンペーン2026～絶景ラリー～",
+      "organizer": "奥四万十高知",
+      "startDate": "2026-09-01",
+      "endDate": "2027-03-01",
+      "dateText": "2026年9月1日 - 2027年3月1日",
+      "stampMethod": "GPS方式",
+      "rewardMethod": "応募フォーム",
+      "url": "",
+      "caseUrl": "",
+      "mapLink": "https://platinumaps.jp/d/platinarally?spot=693081",
+      "address": "高知県須崎市浦ノ内東分3579"
     },
     {
       "id": 690276,
