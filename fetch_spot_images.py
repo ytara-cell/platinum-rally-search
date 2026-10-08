@@ -18,6 +18,7 @@ from urllib.parse import urljoin, urlparse
 import requests
 
 BASE_URL = "https://platinumaps.jp"
+CDN_URL = "https://cdn.platinumaps.jp/"
 SPOT_DETAIL_URL = f"{BASE_URL}/map/api/maps/{{map_id}}/spot/{{spot_id}}?culture=ja"
 REFERER = f"{BASE_URL}/d/platinarally"
 HEADERS = {"Referer": REFERER, "User-Agent": "Mozilla/5.0", "Accept": "application/json"}
@@ -49,8 +50,11 @@ def collect_image_urls(obj, key: str = "") -> list[str]:
         for v in obj:
             found += collect_image_urls(v, key)
     elif isinstance(obj, str) and obj:
-        looks_like_path = obj.startswith(("http://", "https://", "/"))
-        if looks_like_path and (IMAGE_EXT.search(obj) or IMAGE_KEY.search(key)):
+        if obj.startswith("assets/"):
+            # bannerUri / thumbUri などは CDN からの相対パス
+            if IMAGE_EXT.search(obj) or IMAGE_KEY.search(key) or key.endswith("Uri"):
+                found.append(urljoin(CDN_URL, obj))
+        elif obj.startswith(("http://", "https://", "/")) and (IMAGE_EXT.search(obj) or IMAGE_KEY.search(key)):
             found.append(urljoin(BASE_URL, obj))
     return list(dict.fromkeys(found))
 

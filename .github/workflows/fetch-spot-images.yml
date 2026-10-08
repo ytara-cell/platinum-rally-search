@@ -15,7 +15,7 @@ on:
       map_id:
         description: 'マップID'
         required: true
-        default: '151'
+        default: '780'
 
 permissions:
   contents: write
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SPOT_ID: ${{ inputs.spot_id || '667607' }}
-      MAP_ID: ${{ inputs.map_id || '151' }}
+      MAP_ID: ${{ inputs.map_id || '780' }}
 
     steps:
       - uses: actions/checkout@v4
