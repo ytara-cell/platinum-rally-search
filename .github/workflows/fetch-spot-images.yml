@@ -1,0 +1,50 @@
+name: Fetch Spot Images
+
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'fetch_spot_images.py'
+      - '.github/workflows/fetch-spot-images.yml'
+  workflow_dispatch:
+    inputs:
+      spot_id:
+        description: 'スポットID'
+        required: true
+        default: '667607'
+      map_id:
+        description: 'マップID'
+        required: true
+        default: '151'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    env:
+      SPOT_ID: ${{ inputs.spot_id || '667607' }}
+      MAP_ID: ${{ inputs.map_id || '151' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch spot images
+        run: python3 fetch_spot_images.py "$SPOT_ID" --map "$MAP_ID" --out spot_images
+
+      - name: Commit images
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add spot_images || true
+          git diff --cached --quiet || git commit -m "chore: fetch images for spot $SPOT_ID"
+          git push
