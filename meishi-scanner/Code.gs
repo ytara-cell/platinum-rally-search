@@ -4,8 +4,10 @@
  * 「対応者」列には常に RESPONDER（多良）を記入する。
  */
 
-const SPREADSHEET_ID = '1jApTwQmymraPikdQAngU0UCyxiYi7L1bQZr9tRTzQHw';
-const SHEET_NAME = ''; // 空なら先頭のシートに追記
+// 書き込み先のスプレッドシートID（URL の /d/ と /edit の間の文字列）。
+// 空にすると、この Apps Script を開いたスプレッドシート自身に書き込む。
+const SPREADSHEET_ID = '';
+const SHEET_NAME = ''; // 空なら見出し（会社名・名前・対応者など）が見つかったシートに書き込む
 const RESPONDER = '多良';
 
 // 読み取り項目と、スプレッドシートの見出しとして認識する名前の候補
@@ -127,15 +129,10 @@ function parseCardText(text) {
 
 /** 確認済みの項目をスプレッドシートの表の最初の空き行に書き込む */
 function appendCard(card) {
-  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-  const sheet = SHEET_NAME ? ss.getSheetByName(SHEET_NAME) : ss.getSheets()[0];
+  const ss = SPREADSHEET_ID ? SpreadsheetApp.openById(SPREADSHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
   try {
-    const lastRow = Math.max(sheet.getLastRow(), 1);
-    const lastCol = Math.max(sheet.getLastColumn(), 1);
-    const values = sheet.getRange(1, 1, lastRow, lastCol).getDisplayValues();
-
     const norm = s => String(s).replace(/[\s　]/g, '').toLowerCase();
     const allAliases = [RESPONDER_ALIASES, DATE_ALIASES].concat(FIELDS.map(f => f.aliases));
     const matchCol = (headers, aliases) => {
@@ -144,13 +141,31 @@ function appendCard(card) {
       if (i < 0) i = headers.findIndex(h => norm(h) && a.some(x => norm(h).indexOf(x) >= 0));
       return i;
     };
-
     // 見出し行を探す（上から30行のうち、見出し名が一番多く当てはまる行）
-    let headerRow = -1, best = 1;
-    for (let r = 0; r < Math.min(values.length, 30); r++) {
-      const exact = allAliases.filter(a => values[r].some(h => a.map(norm).indexOf(norm(h)) >= 0)).length;
-      if (exact > best) { best = exact; headerRow = r; }
+    const findHeader = values => {
+      let row = -1, best = 1;
+      for (let r = 0; r < Math.min(values.length, 30); r++) {
+        const score = allAliases.filter(a => values[r].some(h => a.map(norm).indexOf(norm(h)) >= 0)).length;
+        if (score > best) { best = score; row = r; }
+      }
+      return { row: row, score: row < 0 ? 0 : best };
+    };
+    const readSheet = sh => {
+      const v = sh.getRange(1, 1, Math.max(sh.getLastRow(), 1), Math.max(sh.getLastColumn(), 1)).getDisplayValues();
+      return { sheet: sh, values: v, header: findHeader(v) };
+    };
+
+    let target;
+    if (SHEET_NAME) {
+      const sh = ss.getSheetByName(SHEET_NAME);
+      if (!sh) throw new Error('シート「' + SHEET_NAME + '」が見つかりません');
+      target = readSheet(sh);
+    } else {
+      target = ss.getSheets().map(readSheet).reduce((a, b) => (b.header.score > a.header.score ? b : a));
     }
+    const sheet = target.sheet;
+    const values = target.values;
+    const headerRow = target.header.row;
     if (headerRow < 0) throw new Error('見出し行（会社名・名前・対応者など）が見つかりませんでした');
     const headers = values[headerRow];
 
@@ -178,11 +193,11 @@ function appendCard(card) {
 
     // 表の中で、対応づけた列がすべて空いている最初の行を探す
     const cols = Object.keys(used).map(Number);
-    let target = -1;
+    let emptyRow = -1;
     for (let r = headerRow + 1; r < values.length; r++) {
-      if (cols.every(c => values[r][c] === '')) { target = r; break; }
+      if (cols.every(c => values[r][c] === '')) { emptyRow = r; break; }
     }
-    const rowNum = target >= 0 ? target + 1 : values.length + 1;
+    const rowNum = emptyRow >= 0 ? emptyRow + 1 : values.length + 1;
 
     // 値のある列だけ書き込む（他の列の書式・プルダウン・数式は触らない）
     Object.keys(cells).forEach(c => sheet.getRange(rowNum, Number(c) + 1).setValue(cells[c]));
